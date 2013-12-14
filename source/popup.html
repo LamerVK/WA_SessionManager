@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>WEB-art28 Session Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery.js"></script>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <div class="popupAdding">
+      <input type="text" id="name" placeholder="Введіть назву сесії">
+      <ul class="listOfItems"></ul>
+      <button class="done">Створити сесію</button>
+      <button class="cansel">Відмінити</button>
+      <div style="clear: both;"></div>
+    </div>
+    <div class="popupSettings">
+      <button class="clearData">Очистити дані (повне видалення сесій)</button>
+      <button class="cansel">Відмінити</button>
+    </div>
+    <div class="popupAbout">
+      <p>Автор: Віктор Коломійцев (lamervk)<br>E-mail: lamervk@gmail.com<br>Skype: lamervk<br>Сайт: <span class="site">lamervk.com.ua</span></p>
+      <button class="cansel">Закрити</button>
+    </div>
+    <ul id="linksArray" style="display:none;"></ul>
+    <div class="header">
+      <img src="images/logo.png" alt="" class="logo">
+      <ul class="nav">
+        <li><button class="sesAdder"><img src="images/add.png" alt=""></button></li>
+        <li><button class="settings"><img src="images/settings.png" alt=""></button></li>
+        <li><button class="info"><img src="images/info.png" alt=""></button></li>
+      </ul>
+    </div>
+    <div style="clear: both;"></div>
+    <ul id="sessionList"></ul>
+    <p id="sessionNull">У вас немає жодної сесії!<br>Створіть її вже зараз:<br><button class="sesAdder">Створити сесію</button></p>
+  </body>
+</html>

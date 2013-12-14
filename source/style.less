@@ -1,0 +1,334 @@
+body {
+  width: 500px;
+  min-height: 300px;
+  overflow-x: hidden;
+  margin: 0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+body *{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  outline: none !important;
+  transition: all .1s;
+}
+.header{
+  width: 100%;
+  height: 50px;
+  background-color: #222;
+}
+.logo{
+  float: left;
+  margin-left: 10px;
+}
+.nav{
+  float: right;
+}
+.nav li{
+  float: left;
+}
+.nav li button{
+  width: 50px;
+  height: 50px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+.nav li button img{
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}
+.nav li button:hover{
+  background-color: #444;
+}
+#sessionList>li{
+  position: relative;
+  min-height: 40px
+}
+#sessionList>li>span{
+  float: left;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+#sessionList>li>span.sesOpener{
+  width: 480px;
+  display: block;
+  position: absolute;
+  top: 0;
+  padding-left: 10px;
+  text-align: left;
+  padding-right: 10px;
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  line-height: 40px;
+  border-bottom: 1px solid #aaa;
+}
+#sessionList>li>span.edSession{
+  position: absolute;
+  right: 40px;
+  top: 0;
+  display: none;
+}
+#sessionList>li>span.delSession{
+  position: absolute;
+  right: 0px;
+  top: 0;
+  display: none;
+}
+
+#sessionList>li>span img{
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+}
+
+#sessionList>li>span:hover{
+  background-color: #ddd;
+}
+#sessionList>li:hover span.sesOpener{
+  padding-right: 90px;
+  width: 400px;
+}
+#sessionList>li:hover span.edSession, #sessionList>li:hover span.delSession{
+  display: block;
+}
+
+#sessionList .editUl{
+  padding-top: 40px;
+  font-size: 0;
+  li{
+    font-size: 14px;
+    height: 30px;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    &:hover{
+      background-color: #eee;
+    }
+    span{
+      line-height: 30px;
+      display: block;
+      white-space: nowrap;
+      overflow:hidden;
+      text-overflow: ellipsis;
+      padding-left: 50px;
+      padding-right: 40px;
+      width: 410px;
+      &.url{
+        display: none;
+      }
+    }
+    &>img{
+      position: absolute;
+      top: 7px;
+      left: 30px;
+    }
+    button{
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      border: 0;
+      background-color: transparent;
+      cursor: pointer;
+      img{
+        margin: 5px;
+        width: 20px;
+        height: 20px;
+      }
+      &:hover{
+        background-color: #ddd;
+      }
+    }
+  }
+}
+.popupAdding{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: #fff;
+  box-shadow: 0 0 10px #ccc;
+  padding: 10px;
+  z-index: 100;
+  display: none;
+  padding-bottom: 50px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  input{
+    width: 438px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+    outline: 10px solid #222 !important;
+    outline-offset: 0 !important;
+  }
+  &>button{
+    position: absolute;
+    bottom: 10px;
+    width: 231px;
+    outline: 1px solid #fff !important;
+    background-color: #eee;
+    border: 0;
+    height: 40px;
+    cursor: pointer;
+    &.done{
+      left: 10px;
+    }
+    &.cansel{
+      right: 10px;
+    }
+    &:hover{
+    background-color: #ddd;
+    }
+  }
+  ul{
+    font-size: 0;
+    li{
+      font-size: 14px;
+      height: 30px;
+      position: relative;
+      &:hover{
+        background-color: #eee;
+      }
+      .url{
+        display: none;
+      }
+      &>img{
+        position: absolute;
+        top: 7px;
+        left: 10px;
+      }
+      span{
+        display: block;
+        padding-left: 30px;
+        padding-right: 30px;
+        line-height: 30px;
+        white-space: nowrap;
+        overflow:hidden;
+        text-overflow: ellipsis;
+      }
+      button{
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: transparent;
+        border: 0;
+        img{
+          width: 20px;
+          height: 20px;
+          margin: 5px;
+        }
+        &:hover{
+          background-color: #ddd;
+        }
+      }
+    }
+  }
+}
+
+.popupSettings{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: #fff;
+  box-shadow: 0 0 10px #ccc;
+  padding: 10px;
+  z-index: 100;
+  display: none;
+  padding-bottom: 50px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  &>button{
+    &.cansel{
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+    }
+    width: 458px;
+    outline: 1px solid #fff !important;
+    background-color: #eee;
+    border: 0;
+    height: 40px;
+    cursor: pointer;
+    &:hover{
+    background-color: #ddd;
+    }
+  }
+}
+.popupAbout{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: #fff;
+  box-shadow: 0 0 10px #ccc;
+  padding: 10px;
+  z-index: 100;
+  display: none;
+  padding-bottom: 50px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  p{
+    padding-top: 40px;
+    text-align: center;
+    font-size: 20px;
+    color: #0682c5;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    line-height: 26px;
+    font-style: italic;
+    .site:hover{
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  &>button{
+    &.cansel{
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+    }
+    width: 458px;
+    outline: 1px solid #fff !important;
+    background-color: #eee;
+    border: 0;
+    height: 40px;
+    cursor: pointer;
+    &:hover{
+    background-color: #ddd;
+    }
+  }
+}
+
+#sessionNull{
+  text-align: center;
+  font-size: 20px;
+  color: #0682c5;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 26px;
+  font-style: italic;
+  padding: 30px 0;
+  button{
+    margin-top: 20px;
+    width: 480px;
+    outline: 1px solid #fff !important;
+    background-color: #eee;
+    border: 0;
+    height: 40px;
+    cursor: pointer;
+    &:hover{
+    background-color: #ddd;
+    }
+  }
+}
